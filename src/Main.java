@@ -6,41 +6,41 @@ public class Main {
         System.out.println("Введите математическое выражение: ");
         Scanner input = new Scanner(System.in);
         String a = input.nextLine();
-        String c = a.toUpperCase();
-        String b = calc(c);
+        String b = calc(a);
         }
 
     public static String calc(String input)throws IOException{
-        String[] spl = input.split(" ");
+        String c = input.toUpperCase();//Перевод строки в верхний регистр
+        String[] spl = c.split(" ");//Разделение строки по пробелу
         String left = spl[0];
         String right = spl[2];
         String oper = spl[1];
-        if(spl.length > 3){
+        if(spl.length > 3){//Проверка массива строк на количество эллементов
             throw new IOException();
-        }else if(spl.length < 3) {
+        }else if(spl.length < 3) {//Вторая роверка массива строк на количество эллементов
             throw new IOException();
         }
-        if(Filter.isRom(left) && Filter.isRom(right)){
-            spl[0] = ConvertRom.RomToAr(left);
-            spl[2] = ConvertRom.RomToAr(right);
-            String result = Main.NotAcalc(spl);
-            int res = Integer.parseInt(result);
-            String last = ConvertRom.ArToRom(res);
-            System.out.println(last);
-            return last;
+        if(Filter.isRom(left) && Filter.isRom(right)){//Проверка на наличие римских цифр
+            spl[0] = ConvertRom.RomToAr(left);//Перевод на арабские
+            spl[2] = ConvertRom.RomToAr(right);//Перевод на арабские
+            String result = Main.NotAСalc(spl);//Подсчет в НЕкалькуляторе
+            int res = Integer.parseInt(result);//Подсчет в НЕкалькуляторе
+            String last = ConvertRom.ArToRom(res);//Перевод в римские цифры
+            System.out.println(last);//Вывод результата
+            return last;//Завершение
         }
         if(Filter.isRom(left) != Filter.isRom(right)){
-            throw new IOException();
+            throw new IOException();//Выражение не подходит условиям
         }
         if(Filter.isTen(spl) != true){
-            throw new IOException();
+            throw new IOException();//Выражение не подходит условиям
         }
-        String result = Main.NotAcalc(spl);
-        System.out.println(result);
+        String result = Main.NotAСalc(spl);//Подсчет в НЕкалькуляторе арабских цифр
+        System.out.println(result);//Вывод результата
 
-        return result;
+        return result;//Завершение
     }
-    public static String NotAcalc(String[] input){
+    public static String NotAСalc(String[] input){
         String left = input[0];
         String right = input[2];
         String oper = input[1];
