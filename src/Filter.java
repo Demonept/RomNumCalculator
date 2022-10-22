@@ -8,7 +8,6 @@ public class Filter {
         for(int i = 0; i <= w.length - 1; i++){
             if(st[0].equals(w[i])) {
                 return true;
-
             }
         }
         return false;
@@ -16,10 +15,14 @@ public class Filter {
     static boolean isTen(String[] b){
         int a = Integer.parseInt(b[0]);
         int c = Integer.parseInt(b[2]);
+        int v = 0;
         if(1 < a && a <= 10 ){
-            return true;
+            v++;
         }
-        if(1 < c && c <= 10 ){
+        if (1 < c && c <= 10 ){
+            v++;
+        }
+        if(v == 2){
             return true;
         }
         return false;

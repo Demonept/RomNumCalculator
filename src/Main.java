@@ -14,7 +14,6 @@ public class Main {
         String[] spl = c.split(" ");//Разделение строки по пробелу
         String left = spl[0];
         String right = spl[2];
-        String oper = spl[1];
         if(spl.length > 3){//Проверка массива строк на количество эллементов
             throw new IOException();
         }else if(spl.length < 3) {//Вторая роверка массива строк на количество эллементов
