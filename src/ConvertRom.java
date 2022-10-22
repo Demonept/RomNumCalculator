@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class ConvertRom {
+class ConvertRom {
     public static String ArToRom(int numAr) throws IOException{
         String[] Roman = {"Z", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX",
                 "X", "XI", "XII", "XIII", "XIV", "XV", "XVI", "XVII", "XVIII", "XIX", "XX",

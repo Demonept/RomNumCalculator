@@ -1,6 +1,6 @@
 import java.io.IOException;
 
-public class Filter {
+class Filter {
     public static boolean isRom(String str){
         String[] st = str.split(" ");
         String[] w = {"0", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
@@ -29,19 +29,3 @@ public class Filter {
     }
 
 }
-
-
-
-
-//НЕ РАБОТАЕТ
-//            if (input.charAt(i) == '+' ||
-//                    input.charAt(i) == '-' ||
-//                    input.charAt(i) == '/'||
-//                    input.charAt(i) == '*')
-//            {
-//
-//                String r = new String(String.valueOf(input.charAt(i)));
-//                String[] t = input.split(r);
-//                System.out.println(t);
-//
-//            }
